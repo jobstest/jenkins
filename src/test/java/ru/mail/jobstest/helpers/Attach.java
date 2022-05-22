@@ -51,7 +51,7 @@ public class Attach {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        return  null;
+        return null;
     }
 
     public static String getSessionId() {
