@@ -23,6 +23,7 @@ public class OwnerTests {
 
         String message = "I logged in as " + login + " with password " + password;
         String message_selenoid = "I logged in as " + login_selenoid + " with password " + password_selenoid;
+
         System.out.println(message);
         System.out.println(message_selenoid);
     }

@@ -84,3 +84,9 @@ task owner(type: Test) {
         includeTags("owner")
     }
 }
+
+task url(type: Test) {
+    useJUnitPlatform {
+        includeTags("url")
+    }
+}

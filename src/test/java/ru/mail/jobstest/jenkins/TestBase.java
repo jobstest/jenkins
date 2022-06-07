@@ -7,6 +7,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import ru.mail.jobstest.helpers.Attach;
 
@@ -18,13 +19,12 @@ public class TestBase {
 
     @BeforeAll
      void setUp() {
-        String login_selenoid = config.login_selenoid();
-        String password_selenoid = config.password_selenoid();
+        String url = System.getProperty("url","@selenoid.autotests.cloud/wd/hub");
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://" + login_selenoid + ":" + password_selenoid + "@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = "https://user1:1234" + url;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
